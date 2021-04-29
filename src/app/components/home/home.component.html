@@ -1,0 +1,16 @@
+<div *ngIf="(civilizations$ | async) as civilizations; else loading">
+  <select>
+    <option *ngFor="let civ of civilizations" [value]="civ.id">
+      {{civ.name}}
+    </option>
+  </select>
+  <table>
+    <tr *ngFor="let civ of civilizations">
+      <td>{{civ.id}}</td>
+      <td><a [routerLink]="'/civ/' + civ.id">{{civ.name}}</a></td>
+    </tr>
+  </table>
+</div>
+<ng-template #loading>
+  Loading stuff...
+</ng-template>

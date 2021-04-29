@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+    "target": "https://age-of-empires-2-api.herokuapp.com/api/v1/",
+    "pathRewrite": {"^/api" : ""},
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
